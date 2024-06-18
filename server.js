@@ -25,7 +25,7 @@ app.get('/fetch-html', async (req, res) => {
 
         
         puppeteer.launch({
-          executablePath: '/opt/render/.cache/puppeteer/chrome/linux-126.0.6478.61'//'/opt/render/.cache/puppeteer/chrome/linux-126.0.6478.61/chrome-linux64/chrome'
+          executablePath: '/opt/render/.cache/puppeteer/chrome-headless-shell/linux-126.0.6478.61' // '/opt/render/.cache/puppeteer/chrome/linux-126.0.6478.61'//'/opt/render/.cache/puppeteer/chrome/linux-126.0.6478.61/chrome-linux64/chrome'
         }).then(async browser => {
           // Your code here
             const page = await browser.newPage();
