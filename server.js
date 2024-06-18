@@ -11,9 +11,20 @@ app.get('/fetch-html', async (req, res) => {
     }
 
     try {
-        const browser = await puppeteer.launch();
-        const page = await browser.newPage();
-        await page.goto(url, { waitUntil: 'networkidle2' });
+        // const browser = await puppeteer.launch();
+        // const page = await browser.newPage();
+        // await page.goto(url, { waitUntil: 'networkidle2' });
+
+        const browser = await puppeteer.launch({
+            headless: "new",
+            args: [
+              '--no-sandbox',
+              '--disable-dev-shm-usage'
+            ],
+          });
+        
+        await page.goto(url, { waitUntil: 'domcontentloaded' });
+        
         const content = await page.content();
         await browser.close();
         res.send(content);
