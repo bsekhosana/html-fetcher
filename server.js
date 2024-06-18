@@ -14,7 +14,7 @@ app.get('/fetch-html', async (req, res) => {
         // const browser = await puppeteer.launch();
         const browser = await puppeteer.launch({
               args: ['--no-sandbox', '--disable-setuid-sandbox'],
-              executablePath: '/usr/bin/google-chrome-stable' // or the path where Chrome is installed
+              executablePath: '/opt/render/.cache/puppeteer/chrome-headless-shell/linux-126.0.6478.61'// '/usr/bin/google-chrome-stable' // or the path where Chrome is installed
             });
         
         const page = await browser.newPage();        
